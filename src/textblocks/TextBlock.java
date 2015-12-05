@@ -68,10 +68,34 @@ public class TextBlock {
                 new StrSubstitutor(makeReplacementMap()).replace(formatString);
     }
 
-    public String makeSelectedInput() {
-        return "<input type=\"checkbox\" name=\"" + id + "-selected\" />";
+    /**
+     * Whether this block was selected.
+     * @param requestValues data from the http request
+     * @return true if this block was selected
+     */
+    public boolean wasSelected(Map<String, String> requestValues) {
+        return requestValues.containsKey(makeSelectedFieldID());
     }
 
+    private String makeSelectedFieldID() {
+        return id + "-selected";
+    }
+
+    /**
+     * Create a html checkbox to determine if this block was selected.
+     *
+     * @return html checkbox
+     */
+    public String makeSelectedInput() {
+        return "<input type=\"checkbox\" name=\"" + makeSelectedFieldID() + " />";
+    }
+
+    /**
+     * Create a value from the input html for values
+     *
+     * @param requestValues values from the htp request
+     * @return value
+     */
     public TextBlockValue fromForm (Map<String, String> requestValues) {
         return toValue(valuesFromForm(requestValues));
     }
