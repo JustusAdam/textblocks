@@ -8,8 +8,20 @@ import java.util.Map;
 class Main {
     public static void main(String[] args) {
         long id = 123456;
+
+        // Each TextBlock consists of several FormatTags, hence we start with a list
         List<FormatTag> l = new ArrayList<>();
-        l.add(new FormatTag(new MessageFormatTagValue(), "message"));
+
+        l.add(
+                new FormatTag(
+                        // Each format tag has a type of value associated with it
+                        // We must initialise an empty value here, because static methods in java cannot be abstract
+                        // and our value objects are responsible for creating their html input fields and verifying
+                        // the type of the response values
+                        new MessageFormatTagValue(),
+                        "message"
+                )
+        );
         l.add(new FormatTag(new TextFormatTagValue(), "name"));
         TextBlock block = new TextBlock(id, "Message: ${message} \n Name: ${name}", l);
 

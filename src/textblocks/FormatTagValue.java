@@ -54,7 +54,7 @@ public abstract class FormatTagValue {
     /**
      * Verifies the structure of the input.
      *
-     * This should be overwritten in subclasses if the input needs a specific structure.
+     * This should be overwritten in subclasses if the input needs a specific structure. See {@link DateFormatTagValue#verify(String)}
      *
      * @param value String from the html form
      * @return true if the structure is correct
@@ -77,5 +77,9 @@ public abstract class FormatTagValue {
      */
     public abstract Tuple<String, String> inputDelims();
 
+    /**
+     * Returns some classes that the generated input field should have.
+     * @return List of html classes
+     */
     public abstract List<String> getInputClasses();
 }
