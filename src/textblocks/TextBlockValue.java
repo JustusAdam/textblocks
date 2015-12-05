@@ -1,15 +1,15 @@
 package textblocks;
 
+import org.apache.commons.lang3.text.StrSubstitutor;
+import util.SelectorFunctions;
+
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import org.apache.commons.lang3.text.StrSubstitutor;
-import util.SelectorFunctions;
-
 /**
  * This is the value associated with a TextBlock.
- *
+ * <p>
  * Created by justusadam on 05/12/15.
  */
 public class TextBlockValue {
@@ -33,7 +33,7 @@ public class TextBlockValue {
      *
      * @return map
      */
-    public Map<String, String> makeValueMap () {
+    public Map<String, String> makeValueMap() {
         return values.stream().collect(Collectors.toMap(
                 FormatTagValue::getName
                 , FormatTagValue::valueRepresentation

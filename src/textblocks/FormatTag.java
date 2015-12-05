@@ -18,6 +18,7 @@ public final class FormatTag {
 
     /**
      * Create a new none empty value of the same type as the current internal one from a stringSinput
+     *
      * @param s input string from the html form
      * @return non-empty {@link FormatTagValue}
      * @throws TypeError
@@ -49,6 +50,7 @@ public final class FormatTag {
 
     /**
      * Create an identifier for this tag using a base identifier from a {@link TextBlock}
+     *
      * @param baseIdentifier identifier for the text block
      * @return unique identifier
      */
