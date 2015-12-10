@@ -13,8 +13,12 @@ public abstract class FormatTagValue {
 
     private FormatTag formatTag;
 
-    public FormatTagValue() {
-    }
+    /**
+     * This constructor is for creating empty FormatTagValues to be used as initial values in new FormatTags.
+     *
+     * Every subclass will require such an empty constructor.
+     */
+    public FormatTagValue() {}
 
     protected FormatTagValue(FormatTag tag) {
         formatTag = tag;
@@ -32,6 +36,14 @@ public abstract class FormatTagValue {
         return formatTag.asIdentifier(baseIdentifier);
     }
 
+    /**
+     * Construct a value of the same kind filles with the (parsed) value of s
+     *
+     * @param tag associated tag
+     * @param s value string
+     * @return new FormatTagValue
+     * @throws TypeError
+     */
     protected abstract FormatTagValue fromValue(FormatTag tag, String s) throws TypeError;
 
     /**

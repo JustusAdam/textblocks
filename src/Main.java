@@ -10,9 +10,9 @@ class Main {
         long id = 123456;
 
         // Each TextBlock consists of several FormatTags, hence we start with a list
-        List<FormatTag> l = new ArrayList<>();
+        List<FormatTag> tagList = new ArrayList<>();
 
-        l.add(
+        tagList.add(
                 new FormatTag(
                         // Each format tag has a type of value associated with it
                         // We must initialise an empty value here, because static methods in java cannot be abstract
@@ -22,8 +22,8 @@ class Main {
                         "message"
                 )
         );
-        l.add(new FormatTag(new TextFormatTagValue(), "name"));
-        TextBlock block = new TextBlock(id, "Message: ${message} \n Name: ${name}", l);
+        tagList.add(new FormatTag(new TextFormatTagValue(), "name"));
+        TextBlock block = new TextBlock(id, "Message: ${message} \n Name: ${name}", tagList);
 
         Map<String, String> requestValues = new HashMap<>();
 
