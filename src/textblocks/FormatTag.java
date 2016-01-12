@@ -39,8 +39,6 @@ public final class FormatTag {
 
         return delims.get1() + "name=\"" +
                 myIdentifier +
-                '-' +
-                name +
                 "\" " +
                 "class=\"" +
                 value.getInputClasses().stream().reduce(String::concat).orElse("") +

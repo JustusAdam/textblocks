@@ -95,7 +95,7 @@ public class TextBlock {
     /**
      * Create a value from the input html for values
      *
-     * @param requestValues values from the htp request
+     * @param requestValues values from the http request
      * @return value
      */
     public TextBlockValue fromForm(Map<String, String> requestValues) {
